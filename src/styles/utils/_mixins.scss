@@ -1,0 +1,17 @@
+@mixin on-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin top-actions {
+  --icon-width: 18px;
+
+  display: grid;
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  place-items: center;
+
+  @include on-desktop {
+    --icon-width: 24px;
+  }
+}
